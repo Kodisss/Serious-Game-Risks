@@ -31,7 +31,7 @@ public class RisksSceneManager : MonoBehaviour
         }
         else if(GameManager.instance.score == 5)
         {
-            GameManager.instance.timeTaken = currentTime;
+            GameManager.instance.timeTaken = gameTime - currentTime;
             SceneManager.LoadScene("EndScreen");
         }
     }

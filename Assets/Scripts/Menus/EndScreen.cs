@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndScreen : MonoBehaviour
+public class EndScreen : MainMenu
 {
     [SerializeField] TMP_Text winOrLoose;
     [SerializeField] TMP_Text timeLeft;
@@ -45,23 +45,11 @@ public class EndScreen : MonoBehaviour
         return false;
     }
 
-    private bool CheckRisksScore()
-    {
-        if(numberOfRisksIdentified == 5)
-        {
-            return true;
-        }
-
-        return false;
-    }
-
     private void BuildUiScreen()
     {
-        if(CheckEPI() && CheckRisksScore())
+        if(CheckEPI() && numberOfRisksIdentified == 5)
         {
             winOrLoose.text = "Bravo !";
-            epiScore.text = "Tu as équipé tes EPIs dans le bon ordre !";
-            risksScore.text = "Tu as trouvé tout les risques dans la zone !";
         }
         else
         {
@@ -75,7 +63,8 @@ public class EndScreen : MonoBehaviour
         }
         else
         {
-            timeLeft.text = "Tu as mis " + GameManager.instance.timeTaken + " pour identifier tout les risques";
+            timeLeft.text = "Tu as mis " + GameManager.instance.timeTaken.ToString("0") + "s pour identifier tous les risques";
+            risksScore.text = "Tu as trouvé tous les risques dans la zone !";
         }
 
         if (CheckEPI())
@@ -88,20 +77,8 @@ public class EndScreen : MonoBehaviour
         }
     }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-    }
-
-    public void RestartGame()
-    {
-        GameManager.instance.isPlaying = true;
-        GameManager.instance.score = 0;
-        SceneManager.LoadScene("EPIScene");
     }
 }
