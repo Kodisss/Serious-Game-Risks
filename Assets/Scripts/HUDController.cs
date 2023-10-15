@@ -30,7 +30,7 @@ public class HUDController : MonoBehaviour
     public void UpdateTimer(float timeLeft)
     {
         timer.gameObject.SetActive(true);
-        timer.text = timeLeft + " s";
+        timer.text = timeLeft.ToString("0") + "s";
     }
 
     public void EnableInteractionText(string text)
