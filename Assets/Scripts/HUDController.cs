@@ -11,6 +11,7 @@ public class HUDController : MonoBehaviour
     }
 
     [SerializeField] private TMP_Text interactionText;
+    [SerializeField] private TMP_Text timer;
 
     private void Awake()
     {
@@ -23,6 +24,13 @@ public class HUDController : MonoBehaviour
         {
             _instance = this;
         }
+        timer.gameObject.SetActive(false);
+    }
+
+    public void UpdateTimer(float timeLeft)
+    {
+        timer.gameObject.SetActive(true);
+        timer.text = timeLeft + " s";
     }
 
     public void EnableInteractionText(string text)

@@ -23,6 +23,7 @@ public class EndScreen : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = true;
         numberOfRisksIdentified = GameManager.instance.score;
         BuildUiScreen();
     }
@@ -77,7 +78,11 @@ public class EndScreen : MonoBehaviour
             timeLeft.text = "Tu as mis " + GameManager.instance.timeTaken + " pour identifier tout les risques";
         }
 
-        if (!CheckEPI())
+        if (CheckEPI())
+        {
+            epiScore.text = "Tu as équipé tes EPIs dans le bon ordre !";
+        }
+        else
         {
             epiScore.text = "Tu n'as pas équipé tes EPIs dans le bon ordre";
         }
