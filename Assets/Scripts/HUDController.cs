@@ -3,6 +3,7 @@ using TMPro;
 
 public class HUDController : MonoBehaviour
 {
+    // make a singleton
     private static HUDController _instance;
 
     public static HUDController Instance
@@ -24,9 +25,11 @@ public class HUDController : MonoBehaviour
         {
             _instance = this;
         }
-        timer.gameObject.SetActive(false);
+        timer.gameObject.SetActive(false); // we don't need the timer activated right away, only when the risk scene starts
     }
 
+
+    //Function used to display stuff stored in another object
     public void UpdateTimer(float timeLeft)
     {
         timer.gameObject.SetActive(true);

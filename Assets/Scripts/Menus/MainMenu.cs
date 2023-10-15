@@ -1,6 +1,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
+// Main menu with basic buttons
 public class MainMenu : MonoBehaviour
 {
     public void Play()

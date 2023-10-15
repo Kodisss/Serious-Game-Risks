@@ -2,14 +2,17 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// child of main menu to use the basic buttons
 public class EndScreen : MainMenu
 {
+    // everything you need to display the result of the game
     [SerializeField] TMP_Text winOrLoose;
     [SerializeField] TMP_Text timeLeft;
     [SerializeField] TMP_Text epiScore;
     [SerializeField] TMP_Text risksScore;
     private int numberOfRisksIdentified;
 
+    // solution of the EPI's order
     private string[] epi = new string[]
                         {
                             "Bleu",
@@ -21,6 +24,7 @@ public class EndScreen : MainMenu
                             "Lumière"
                         };
 
+    //Bring back cursor and get the number of risks identified
     private void Start()
     {
         Cursor.visible = true;
@@ -28,6 +32,7 @@ public class EndScreen : MainMenu
         BuildUiScreen();
     }
 
+    // check if the EPI are in the right order with the solution hardcoded up there
     private bool CheckEPI()
     {
         int epiScore = 0;
@@ -45,6 +50,7 @@ public class EndScreen : MainMenu
         return false;
     }
 
+    // do all necessary checks in order to display whatever happened during the game
     private void BuildUiScreen()
     {
         if(CheckEPI() && numberOfRisksIdentified == 5)
@@ -77,6 +83,7 @@ public class EndScreen : MainMenu
         }
     }
 
+    // one more button that main menu didn't have already
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");

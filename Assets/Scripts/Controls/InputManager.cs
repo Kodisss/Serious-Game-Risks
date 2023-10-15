@@ -26,6 +26,7 @@ public class InputManager : MonoBehaviour
         Cursor.visible = false;
     }
 
+    // this is useful for a pause or game loss
     private void OnEnable()
     {
         playerControls.Enable();
@@ -37,7 +38,7 @@ public class InputManager : MonoBehaviour
     }
 
 
-    //Using Unity's new input system
+    //Using Unity's new input system to get the player movement and interactions
     public Vector2 GetPlayerMovement()
     {
         return playerControls.Player.Movement.ReadValue<Vector2>();
