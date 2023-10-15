@@ -6,7 +6,7 @@ public class RisksSceneManager : MonoBehaviour
     private HUDController hudController;
 
     private float currentTime = 0f;
-    [SerializeField] private float gameTime = 10f;
+    [SerializeField] private float gameTime = 180f;
 
     // Start is called before the first frame update
     void Start()
