@@ -7,18 +7,17 @@ public class Inventory : MonoBehaviour
 
     private void Update()
     {
-        if (epiInventory[6] != null) SceneManager.LoadScene("GameScene");
+        if (epiInventory[6] != null)
+        {
+            GameManager.instance.epiList = epiInventory;
+            SceneManager.LoadScene("GameScene");
+        }
     }
 
     public void AddEpi(string epiName)
     {
         epiInventory[CheckInventory()] = epiName;
         //Debug.Log(epiInventory[0] + " " + epiInventory[1] + " " + epiInventory[2] + " " + epiInventory[3] + " " + epiInventory[4] + " " + epiInventory[5]);
-    }
-
-    public string[] GetInventory()
-    {
-        return epiInventory;
     }
 
     // check the next avaiable spot in Inventory
