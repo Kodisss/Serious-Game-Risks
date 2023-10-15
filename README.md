@@ -1,7 +1,7 @@
 # Serious Game about Risks in a work environment.
  Technical test for Assystem application.
- You have to input the Cinemachine package as well as the InputManager package
- from Unity's registry in order to compile the code as it is excluded by the gitignore.
+ You have to import the Cinemachine package as well as the InputManager and TMPro package
+ from Unity's registry in order to compile the code as they are excluded by the gitignore.
 
  Copyright 2023 Ashley
  Licensed under the Apache License, Version 2.0 (the "License");
