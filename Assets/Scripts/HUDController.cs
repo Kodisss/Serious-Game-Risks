@@ -13,6 +13,7 @@ public class HUDController : MonoBehaviour
 
     [SerializeField] private TMP_Text interactionText;
     [SerializeField] private TMP_Text timer;
+    [SerializeField] private TMP_Text risksNumber;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class HUDController : MonoBehaviour
             _instance = this;
         }
         timer.gameObject.SetActive(false); // we don't need the timer activated right away, only when the risk scene starts
+        risksNumber.gameObject.SetActive(false);
     }
 
 
@@ -33,7 +35,13 @@ public class HUDController : MonoBehaviour
     public void UpdateTimer(float timeLeft)
     {
         timer.gameObject.SetActive(true);
-        timer.text = timeLeft.ToString("0") + "s";
+        timer.text = timeLeft.ToString("0") + "s restantes";
+    }
+
+    public void UpdateRisksCount(int value)
+    {
+        risksNumber.gameObject.SetActive(true);
+        risksNumber.text = value + " / 5 risques identifiés";
     }
 
     public void EnableInteractionText(string text)

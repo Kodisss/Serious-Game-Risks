@@ -22,6 +22,7 @@ public class RisksSceneManager : MonoBehaviour
         // timer control and display
         currentTime -= 1 * Time.deltaTime;
         hudController.UpdateTimer(currentTime);
+        hudController.UpdateRisksCount(GameManager.instance.score);
         CheckForGameEnd();
     }
 
