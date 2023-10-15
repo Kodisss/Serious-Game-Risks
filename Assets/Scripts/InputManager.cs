@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
@@ -38,6 +36,8 @@ public class InputManager : MonoBehaviour
         playerControls.Disable();
     }
 
+
+    //Using Unity's new input system
     public Vector2 GetPlayerMovement()
     {
         return playerControls.Player.Movement.ReadValue<Vector2>();
@@ -51,5 +51,10 @@ public class InputManager : MonoBehaviour
     public bool PlayerJumpedThisFrame()
     {
         return playerControls.Player.Jump.triggered;
+    }
+
+    public bool PressedEKeyThisFrame()
+    {
+        return playerControls.Player.Interact.triggered;
     }
 }
