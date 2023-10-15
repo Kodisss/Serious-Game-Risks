@@ -16,6 +16,11 @@ public class Inventory : MonoBehaviour
         //Debug.Log(epiInventory[0] + " " + epiInventory[1] + " " + epiInventory[2] + " " + epiInventory[3] + " " + epiInventory[4] + " " + epiInventory[5]);
     }
 
+    public string[] GetInventory()
+    {
+        return epiInventory;
+    }
+
     // check the next avaiable spot in Inventory
     private int CheckInventory()
     {
