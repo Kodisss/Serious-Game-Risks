@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class FirstPersonCamera : MonoBehaviour
 {
     [SerializeField] private Transform player; // Reference to the player object.
-    [SerializeField] private float sensitivity = 2.0f; // Mouse look sensitivity.
+    [SerializeField] private float sensitivity = 0.04f; // Mouse look sensitivity.
     [SerializeField] private float smoothing = 2.0f; // Mouse smoothing.
 
     private Vector2 smoothMouse;
