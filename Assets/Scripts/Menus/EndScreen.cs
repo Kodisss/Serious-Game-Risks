@@ -28,6 +28,7 @@ public class EndScreen : MainMenu
     private void Start()
     {
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         numberOfRisksIdentified = GameManager.instance.score;
         BuildUiScreen();
     }
@@ -59,7 +60,7 @@ public class EndScreen : MainMenu
         }
         else
         {
-            winOrLoose.text = "Essaye encore !";
+            winOrLoose.text = "Essaie encore !";
         }
 
         if(numberOfRisksIdentified != 5)

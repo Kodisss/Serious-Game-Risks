@@ -3,8 +3,8 @@
 
  Built with Unity 2022.3.10f1 LTS
 
- You have to import the Cinemachine package as well as the InputManager and TMPro package
- from Unity's registry in order to compile the code as they are excluded by the gitignore.
+ You have to import the InputManager and TMPro packages from Unity's
+ registry in order to compile the code as they are excluded by the gitignore.
 
  Copyright 2023 Ashley
  Licensed under the Apache License, Version 2.0 (the "License");
