@@ -1,5 +1,8 @@
 # Serious Game about risks and prevention in a construction zone.
  Technical test for [Assystem](https://www.assystem.com/en/) application.
+
+ Built with Unity 2022.3.10f1 LTS
+
  You have to import the Cinemachine package as well as the InputManager and TMPro package
  from Unity's registry in order to compile the code as they are excluded by the gitignore.
 
